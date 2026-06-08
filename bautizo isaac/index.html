@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bautizo de Isaac Daniel Almeida Pantoja</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom, #eaf6ff, #ffffff);
+    color:#333;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#8fd3ff,#dff4ff);
+}
+
+header h1{
+    font-size:3rem;
+    color:#0b4f75;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero img{
+    width:300px;
+    max-width:90%;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.section{
+    max-width:1000px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.card h2{
+    color:#0b4f75;
+    margin-bottom:20px;
+}
+
+.info{
+    font-size:1.2rem;
+    line-height:2;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+.button{
+    display:inline-block;
+    margin-top:25px;
+    background:#0b4f75;
+    color:white;
+    padding:15px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:1.1rem;
+    transition:.3s;
+}
+
+.button:hover{
+    background:#06334d;
+}
+
+.quote{
+    text-align:center;
+    font-style:italic;
+    font-size:1.3rem;
+    color:#0b4f75;
+    margin-top:30px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#0b4f75;
+    color:white;
+    margin-top:40px;
+}
+
+.countdown{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#0b4f75;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🙏 Bautizo de Isaac Daniel Almeida Pantoja 👼</h1>
+    <p>Con la bendición de Dios y el amor de nuestra familia</p>
+</header>
+
+<section class="hero">
+    <!-- Reemplaza foto1.jpg por la foto principal -->
+    <img src="foto1.jpg" alt="Isaac Daniel Almeida Pantoja">
+</section>
+
+<section class="section">
+    <div class="card">
+        <h2>Te invitamos a compartir este día tan especial</h2>
+
+        <div class="info">
+            📅 <strong>Sábado 14 de noviembre de 2026</strong><br>
+
+            ⛪ <strong>Ceremonia:</strong> Iglesia de Ibarra<br>
+
+            🎉 <strong>Recepción:</strong> Hostería Balcón de Yahuarcocha<br>
+        </div>
+
+        <div class="countdown" id="contador"></div>
+
+        <a class="button"
+        href="https://forms.gle/tUn3FM5DZgUHSoGZA"
+        target="_blank">
+        Confirmar Asistencia
+        </a>
+
+        <p class="quote">
+            "Dejad que los niños vengan a mí y no se lo impidáis,
+            porque de los que son como ellos es el Reino de Dios."
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="card">
+        <h2>📸 Galería de Isaac</h2>
+
+        <div class="gallery">
+
+            <!-- Reemplaza estas imágenes con los nombres reales -->
+            <img src="foto1.jpg" alt="Isaac">
+            <img src="foto2.jpg" alt="Isaac">
+            <img src="foto3.jpg" alt="Isaac">
+            <img src="foto4.jpg" alt="Isaac">
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    💙 Gracias por acompañarnos en este momento tan importante para Isaac Daniel Almeida Pantoja 💙
+</footer>
+
+<script>
+
+const fechaEvento = new Date("Nov 14, 2026 12:00:00").getTime();
+
+const contador = setInterval(function(){
+
+let ahora = new Date().getTime();
+let distancia = fechaEvento - ahora;
+
+let dias = Math.floor(distancia/(1000*60*60*24));
+let horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+let minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+let segundos = Math.floor((distancia%(1000*60))/1000);
+
+document.getElementById("contador").innerHTML =
+"⏳ Faltan " + dias + " días, " +
+horas + " horas, " +
+minutos + " minutos y " +
+segundos + " segundos";
+
+if(distancia < 0){
+    clearInterval(contador);
+    document.getElementById("contador").innerHTML =
+    "🎉 ¡Ha llegado el gran día!";
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>
